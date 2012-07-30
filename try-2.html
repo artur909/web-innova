@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+<script type="text/javascript">
+//function hide(flag){
+//doc = document.formulario01.campo01;
+//flag ? doc.style.visibility = 'visible' : doc.style.visibility = 'hidden';
+//if(!flag) doc.value = '';
+//}
+
+
+function Mostrar(cual)
+{
+if(cual.marca.selectedIndex==1){cual.profess.style.visibility='visible'}else{cual.profess.style.visibility='hidden'}
+	if(cual.marca.selectedIndex==2){cual.otramarca.style.visibility='visible'}else{cual.otramarca.style.visibility='hidden'}
+		if (cual.marca.selectedIndex==0){cual.student.style.visibility='visible'}else{cual.student.style.visibility='hidden'}
+}
+</script>
+</head>
+<body>
+<form name='formulario01'>
+	<!--<select size="1" name='select1'>
+		<option name='mostrar' onClick='hide(true);'>Profesional</option>
+		<option name='mostrar' onClick='hide(false);'>Estudiante</option>
+	</select>-->
+<!--<input type='radio' name='mostrar' onClick='hide(true);' /> Acepto Contrato<br />
+<input type='radio' name='mostrar' onClick='hide(false);' />No Acepto Contrato<br />
+<input type='text' name='campo01' style='visibility:hidden' />
+</form>-->
+
+<form name="formu">
+<select name="marca" onChange="Mostrar(this.form)">
+<option >Estudiantes</option>
+<option >Profesionales</option>
+<option >Otro</option>
+</select>
+<br>
+<input type="text" name="student" style="visibility:hidden"><br>
+	<!--<input type="text" name="otramarca" style="visibility:hideen">-->
+<select size="1" name="profess" style="visibility:hidden">
+	<option name="a">a</option>
+	<option name="b">b</option>
+	<option name="c">c</option>
+</select><br>
+<input type="text" name="otramarca" style="visibility:hidden">
+</form>
+</body>
+</html>
+
+
