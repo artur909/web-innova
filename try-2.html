@@ -4,13 +4,6 @@
 	<meta charset="utf-8" />
 	<title></title>
 <script type="text/javascript">
-//function hide(flag){
-//doc = document.formulario01.campo01;
-//flag ? doc.style.visibility = 'visible' : doc.style.visibility = 'hidden';
-//if(!flag) doc.value = '';
-//}
-
-
 function Mostrar(cual)
 {
 if(cual.marca.selectedIndex==1){cual.profess.style.visibility='visible'}else{cual.profess.style.visibility='hidden'}
@@ -44,7 +37,9 @@ if(cual.marca.selectedIndex==1){cual.profess.style.visibility='visible'}else{cua
 	<option name="b">b</option>
 	<option name="c">c</option>
 </select><br>
+<div id="otramarca">
 <input type="text" name="otramarca" style="visibility:hidden">
+</div>
 </form>
 </body>
 </html>

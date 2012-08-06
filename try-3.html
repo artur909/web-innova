@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lan="es">
+<head>
+	<meta charset="utf-8">
+	<title>Hoja de prueba</title>
+<style type="text/css">
+*{
+	margin: 0;
+}
+
+body{
+	background: #ccc;
+	text-align: center;
+	width: 950px;
+}
+
+article{
+	margin-top: 50px;
+	position: relative;
+	width: 100%;
+}
+#forma{
+	position: relative;
+}
+
+#forma1{
+	margin: 20px;
+	width: 900px;
+	display:block;
+}
+
+#profesion{
+	margin: 0;
+	padding: 20px;
+	width: 200px;
+	height: 200px;
+	background: black;
+	position: relative;
+	display: inline-block;
+}
+
+#estudent{
+	padding: 20px;
+	width: 200px;
+	height: 200px;
+	background: black;
+	position: relative;
+	display: inline-block;
+	margin-top: 0px;
+}
+
+.otro{
+	position: relative;
+	margin-top: 15px;
+}
+</style>
+<script type="text/javascript">
+function mostrar (cual) {
+	if(cual.profess.selectedIndex==1){cual.estudiante.style.visibility='visible'}else{cual.estudiante.style.visibility='hidden'}
+	if(cual.profess.selectedIndex==2){cual.carrera.style.visibility='visible'}else{cual.carrera.style.visibility='hidden'}
+}
+
+function muestra(dif){
+	if (dif.carrera.selectedIndex==4){dif.otro.style.visibility='visible'}else{dif.otro.style.visibility='hidden'};
+}
+</script>
+</head>
+<body>
+	<article>
+		<div id="forma">
+			<form>
+			<div id="forma1">
+				Nombre:<input type="text" name="nombre"><br>
+				<br>
+				Apellidos:<input type="text" name="apellido"><br>
+				<br>
+				Profesion:<select id="profess" onChange="mostrar(this.form)">
+							<option selected="selected"></option>
+							<option>Estudiante</option>
+							<option>Profesional</option>
+						  </select>
+			</div>
+				<div id="estudent">
+					<input type="text" name="estudiante" style="visibility:hidden">
+				</div>
+				<div id="profesion">
+					<select id="carrera" style="visibility:hidden" onChange="muestra(this.form)">
+						<option selected="selected"></option>
+						<option>Arquitecto</option>
+						<option>Diseñador de interiores</option>
+						<option>Mineria</option>
+						<option>Otro</option>
+					</select>
+				<input type="text" name="otro" class="otro" style="visibility:hidden">
+				</div>
+			</form>
+		</div>
+	</article>
+</body>
+</html>
