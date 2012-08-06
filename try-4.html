@@ -1,0 +1,246 @@
+<html>
+<title></title>
+<head>
+<!-- Script para mostrar/ocultar las capas de formulario -->
+<script language="JavaScript">
+function oculta(id){
+    var elDiv = document.getElementById(id); //se define la variable "elDiv" igual a nuestro div
+    elDiv.style.display='none'; //damos un atributo display:none que oculta el div   
+   }
+
+function muestra(id){
+    var elDiv = document.getElementById(id); //se define la variable "elDiv" igual a nuestro div
+    elDiv.style.display='block';//damos un atributo display:block que  el div   
+   }
+
+
+window.onload = function(){/*hace que se cargue la función */
+/* "Mandamos como parametro el nombre de la Div para ocultar" */
+oculta('c1'); /*Ocultamos Todos*/
+oculta('c2');
+oculta('c3');
+}
+
+function oculta_select(selObj){
+ 
+ switch(selObj)
+      
+      {
+      
+      case "SL":
+      alert("Selecciona una opcion");
+	  oculta('c1'); 
+      oculta('c2');
+      oculta('c3');
+      break;
+      
+      case "c1":
+      //alert("Libros de Texto");
+      muestra('c1');
+      oculta('c2');
+      oculta('c3');      
+      break;
+      
+      case "c2":
+      //alert("Libros de Lectura");
+      muestra('c2');
+      oculta('c1');
+      oculta('c3');
+      break;
+      
+      case "c3":
+      //alert("Otros Artículos");
+      muestra('c3');
+      oculta('c1');
+      oculta('c2');
+      break;
+
+      default:
+      alert("error, actualice la pagina");
+   }
+
+}
+</script>
+
+
+<style type="text/css">
+
+#contenedor {
+	position:relative;
+	z-index:100;
+	width: 412px;
+}
+#c1 {
+	position:absolute;
+	width:412px;
+	z-index:200;
+}
+
+#c2 {
+	position:absolute;
+	width:412px;
+	z-index:300;
+}
+
+#c3 {
+	position:absolute;
+	width:412px;
+	z-index:400;
+}
+</style>
+
+
+<body >
+
+
+                                  <select name="oculMenu" class="formularios" id="oculMenu" onChange="oculta_select(this.value);" >
+                                    <option value="SL" selected>Seleccione un artículo...</option>
+                                    <option value="c1">Libros de Texto</option>
+                                    <option value="c2">Literatura (Libros de Lectura)</option>
+                                    <option value="c3">Otros</option>
+                                  </select>
+                                </td>
+                              </tr>
+                            </table>
+                            <br />
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td>
+                                
+                                <div id="contenedor">
+                                
+                                
+                                <!-- Formulario oculto Libros de Texto -->
+                                <div id="c1">
+                                
+                                <form id="libros_texto" name="libros_texto" method="post" action="../php/libros_texto.php">
+    
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="2" class="texto">Reserva tus libros de texto:</td>
+    </tr>
+  <tr>
+    <td colspan="2" class="textoInfo">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="textoInfo">*Nombre:</td>
+    <td class="textoInfo">*Apellidos:</td>
+  </tr>
+  <tr>
+    <td class="textoInfo"><label>
+      <input name="nombre_texto" type="text" class="formularios" id="nombre_texto" size="25" />
+    </label></td>
+    <td class="textoInfo"><label>
+      <input name="apellidos_texto" type="text" class="formularios" id="apellidos_texto" size="25" />
+    </label></td>
+  </tr>
+  <tr>
+    <td class="textoInfo">&nbsp;</td>
+    <td class="textoInfo">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="textoInfo">*Correo electrónico:</td>
+    <td class="textoInfo">*Teléfono de contacto:</td>
+  </tr>
+  <tr>
+    <td class="textoInfo"><label>
+      <input name="email_texto" type="text" class="formularios" id="email_texto" size="25" />
+    </label></td>
+    <td class="textoInfo"><label>
+      <input name="telefono_texto" type="text" class="formularios" id="telefono_texto" size="25" />
+    </label></td>
+  </tr>
+  <tr>
+    <td class="textoInfo">&nbsp;</td>
+    <td class="textoInfo">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="textoInfo">*Título del libro:</td>
+    <td class="textoInfo">*Curso escolar:</td>
+  </tr>
+  <tr>
+    <td><label>
+      <input name="titulo_texto" type="text" class="formularios" id="titulo_texto" size="25" />
+    </label></td>
+    <td><label>
+      <input name="curso_texto" type="text" class="formularios" id="curso_texto" size="25" />
+    </label></td>
+  </tr>
+  <tr>
+    <td class="textoInfo">&nbsp;</td>
+    <td class="textoInfo">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="textoInfo">*Editorial:</td>
+    <td class="textoInfo">Autor:</td>
+  </tr>
+  <tr>
+    <td><label>
+      <input name="editorial_texto" type="text" class="formularios" id="editorial_texto" size="25" />
+    </label></td>
+    <td><label>
+      <input name="autor_texto" type="text" class="formularios" id="autor_texto" size="25" />
+    </label></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td class="textoInfo">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><span class="textoInfo">ISBN:</span> <span class="texto_pequeño">¿Que es esto?</span> <img src="../img/max.png" alt="ir" width="10" height="10" /></td>
+    <td class="textoInfo">*Cantidad:</td>
+  </tr>
+  <tr>
+    <td><label>
+      <input name="isbn_libros" type="text" class="formularios" id="isbn_libros" size="25" />
+    </label></td>
+    <td><label>
+      <select name="cantidad_texto" class="formularios" id="cantidad_texto">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+            </select>
+    </label></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2" class="textoInfo">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="textoInfo">Comentarios adicionales:</td>
+    <td colspan="2" class="textoInfo">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3"><label>
+      <textarea name="comentarios_texto" cols="45" rows="2" class="formularios" id="comentarios_texto"></textarea>
+    </label></td>
+    </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2" class="textoInfo">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><label></label></td>
+    <td colspan="2"><label></label></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2"><label>
+      <input name="enviar_texto" type="submit" class="boton_form" id="enviar_texto" value="Enviar" />
+    </label>
+      <label>
+      <input name="borrar_texto" type="reset" class="boton_form" id="borrar_texto" value="Borrar" />
+      </label></td>
+    </tr>
+</table>
+                    
+                                  </form>
+                                
+                                </div>
+</body>
+</html>
