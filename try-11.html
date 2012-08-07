@@ -18,6 +18,17 @@ if(elemento.value==4) {
 <style type="text/css">
 body{
 	font-family: "Helvetica", Arial;
+	text-align: center;
+}
+
+section{
+	max-width: 700px;
+}
+
+#formulario{
+	display: inline-block;
+	width: 100%;
+	position: relative;
 }
 
 #span_otra_ocupacion{
@@ -28,7 +39,11 @@ body{
 </head>
 <body>
 <form>
-
+<section>
+<div id="formulario">
+Nombre:<input type="text" name="nombre" class="input"><br>
+Apellido:<input type="text" name="apellido" class="input"><br>
+E-mail:<input type="mail" name="correo" input="input"><br>
 <label for="ocupacion">Carrera</label> 
 <select id="ocupacion" name="ocupacion" onchange="toggle_ocupacion(this)">
 	<option selected="selected"></option>
@@ -43,7 +58,13 @@ body{
 <label for="cual">Mencione su otra carrera</label><input name="cual" type="text" id="cual" />
 </span>
 </div>
-
+</div>
+Comentario:<textarea name="comentario" cols="20" rows="4"></textarea>
+<br>
+<input type="submit" value="Enviar" name="Enviar">
+<input type="reset" value="Limpiar" name="Borrar">
 </form>
+</section>
+
 </body>
 </html>
