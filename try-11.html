@@ -6,7 +6,7 @@
 <script type="text/javascript">
 function toggle_ocupacion(elemento) {
 
-if(elemento.value==0) {
+if(elemento.value==4) {
    document.getElementById("span_otra_ocupacion").style.display = "inline";
 } else {
    document.getElementById("span_otra_ocupacion").style.display = "none"; 
@@ -14,7 +14,12 @@ if(elemento.value==0) {
 
 }
 </script>
+
 <style type="text/css">
+body{
+	font-family: "Helvetica", Arial;
+}
+
 #span_otra_ocupacion{
 	position: relative;
 	margin-top: 150px;
@@ -24,16 +29,18 @@ if(elemento.value==0) {
 <body>
 <form>
 
-<label for="ocupacion">Ocupacion</label> 
+<label for="ocupacion">Carrera</label> 
 <select id="ocupacion" name="ocupacion" onchange="toggle_ocupacion(this)">
-   <option value="1">Analista de sistemas</option>
-   <option value="2">Programador</option>
-   <option value="0">Otra</option>
+	<option selected="selected"></option>
+   <option value="1">Arquitecto</option>
+   <option value="2">Diseñador de Interiores</option>
+   <option value="3">Mineria</option>
+   <option value="4">Otro</option>
 </select>
-
+<br>
 <div id="span_otra_ocupacion" style="display:none">
 <span id="span">
-<label for="cual">Cual?</label><input name="cual" type="text" id="cual" />
+<label for="cual">Mencione su otra carrera</label><input name="cual" type="text" id="cual" />
 </span>
 </div>
 
