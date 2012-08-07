@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Prueba</title>
+<script type="text/javascript">
+function showContent() {
+        element = document.getElementById("content");
+        check = document.getElementById("check");
+        if (check.checked) {
+            element.style.display='block';
+        }
+        else {
+            element.style.display='none';
+        }
+    }
+</script>
+</head>
+<body>
+<b>Mostrar contenido?</b>
+<input type="checkbox" name="check" id="check" value="1" onchange="javascript:showContent()" />
+
+<div id="content" style="display: none;">
+   contenido del div escondido<br/>
+   contenido del div escondido<br/>
+   contenido del div escondido<br/>
+ </div>
+</body>
+</html>

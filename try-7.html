@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Prueba</title>
+<script type="text/javascript">
+<!--
+function mostrarReferencia(){
+//Si la opcion con id Conocido_1 (dentro del documento > formulario con name fcontacto >     y a la vez dentro del array de Conocido) esta activada
+if (document.fcontacto.Conocido[1].checked == true) {
+//muestra (cambiando la propiedad display del estilo) el div con id 'desdeotro'
+document.getElementById('desdeotro').style.display='block';
+//por el contrario, si no esta seleccionada
+} else {
+//oculta el div con id 'desdeotro'
+document.getElementById('desdeotro').style.display='none';
+}
+}
+-->
+
+function mostrardiv(){
+	if (document.fcontacto.carreras[4].checked == true) {
+		document.getElementById('OtraCarrera').style.display='block';
+	} else {
+		document.getElementById('OtraCarrera').style.display='none';
+	}
+}
+</script>
+</head>
+<body>
+
+<form action="<?=$_SERVER['PHP_SELF']?>" method="post" name="fcontacto">
+<p>A través de donde nos has conocido:<br />
+<input type="radio" name="Conocido" value="Google" id="Conocido_0" onclick="mostrarReferencia();" /> Google
+<input type="radio" name="Conocido" value="Otros" id="Conocido_1" onclick="mostrarReferencia();" /> Otros
+</p>
+
+<div id="desdeotro" style="display:none;">
+	<p>Referencia de la oferta:</p>
+	<p><input type="text" name="otro" class="input" /></p>
+</div>
+
+<select name="carreras" onChange="mostrar(this.form)">
+	<option selected="selected"></option>
+	<option>Arquitecto</option>
+	<option>Diseñador Grafico</option>
+	<option>Mineria</option>
+	<option>Otro</option>
+</select>
+
+<div id="OtraCarrera" style="display:none;">
+	<p>Escribe tu otra carrera</p>
+	<p><input type="text" name="otra" class="input"></p>
+</div>
+
+</form>
+</body>
+</html>
