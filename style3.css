@@ -9,23 +9,31 @@ body{
 	text-align: center;
 }
 
+#cuerpo{
+	max-width: 1000px;
+}
+
 header{
 	position: relative;
-	width: 1000px;
+	width: 100%;
 }
 #logo{
+	width: 20%;
 	position: relative;
 	float: left;
 }
 
 nav ul li{
+	margin-top: 25px;
 	position: relative;
 	float: right;
 }
 
 ul li{
+	text-decoration: none;
+	font-size: 0.9em;
 	display: inline-block;
-	width: 150px;
+	width: 100px;
 	height: 50px;
 }
 
@@ -36,7 +44,7 @@ ul li{
 }
 
 #columns-text{
-	width: 1000px;
+	width: 100%;
 }
 
 #columns{
@@ -46,9 +54,45 @@ ul li{
 
 #columns-img{
 	position: relative;
-	width: 1000px;
+	width: 100%;
 }
 
-#columns-img-o{
+#colums-img-o{
+	width: 200px;
+	display: inline-block;
+}
+
+#columns-text-f{
+	width: 100%;
+	position: relative;
+}
+
+#columns-text-f-info{
+	display: inline-block;
+	width: 240px;
+	position: relative;
+	text-align: justify;
+}
+
+footer{
+	background: black;
+	margin-top: 20px;
+	position: relative;
+	width: 100%;
+	padding: 20px;
+}
+
+#pie{
+	position: relative;
+	width: 100%;
+}
+#copy{
+	color: white;
+	position: relative;
+	float: left;
+}
+
+#social{
+	padding: 10px;
 	display: inline-block;
 }
