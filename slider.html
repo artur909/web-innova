@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<title>Slider Simple</title>
+<style type="text/css">
+*{
+	margin: 0;
+}
+
+body{
+	font-size: Helvetica, Arial;
+	background: #ccc;
+	text-align: center;
+}
+
+#cuerpo{
+	background: #fff;
+	max-width: 950px;
+}
+
+#slider{
+	background: #ccc;
+	position: relative;
+	width: 720px;
+	height:480px;
+}
+ul.tabs{
+	margin: 0;
+	padding: 0;
+	float: left;
+	height: 480px;
+	width: 20px;
+}
+
+ul.tabs li{
+	background: black;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 10px;
+	height:100px;
+	overflow: hidden;
+	position: relative;
+}
+
+ul.tabs li a{
+	display: block;
+	outline: none;
+}
+
+ul.tabs li a:hover{
+	background: white;
+}
+
+html ul.tabs li.active, html ul.tabs li.active a:hover{
+	background: #ccc;
+	border-bottom: 1px solid #fff;
+}
+
+.container{
+	border-bottom: 1px solid #999;
+	border-top: none;
+	overflow: hidden;
+	clear: both;
+	float: left;
+	width: 100%;
+	background: #fff;
+}
+
+.tab_cont{
+	padding: 20px;
+	font-size: 1.2em;
+}
+</style>
+</head>
+<body>
+<section id="cuerpo">
+	<article id="slider-funci">
+		<div id="slider">
+			<ul class="tabs">
+				<li><a href="#tab1"></a></li>
+				<li><a href="#tab2"></a></li>
+				<li><a href="#tab3"></a></li>
+			</ul>
+			<div class="container">
+				<div id="tab1" class="tab_cont">este es mi contenido 1</div>
+				<div id="tab2" class="tab_cont">este es mi contenido 2</div>
+				<div id="tab3" class="tab_cont">este es mi contenido 3</div>
+			</div>
+		</div>
+	</article>
+</section>
+</body>
+</html>

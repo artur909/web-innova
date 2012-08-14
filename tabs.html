@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<title></title>
+<style type="text/css">
+body{
+	text-align: center;
+}
+
+#tab{
+	margin-left: 150px;
+	width: 730px;
+	height: 480px;
+}
+ul.tabs {
+	margin: 0px 0 0 0px;
+	padding: 0;
+	float: left;
+	list-style: none;
+	height: 0px;
+	border-bottom: 0px solid black;
+	border-right: 0px solid #fff;
+	width: 20px;
+	margin-top: 5px;
+}
+
+ul.tabs li {
+	float: left;
+	margin: 5px;
+	padding: 0;
+	width: 10px;
+	height: 100px;
+	line-height: 31px;
+	border: 1px solid #000;
+	border-left: none;
+	margin-bottom: -1px;
+	overflow: hidden;
+	position: relative;
+	background: black;
+}
+
+ul.tabs li a {
+	text-decoration: none;
+	color: #000;
+	display: block;
+	font-size: 1.2em;
+	padding: 0 20px;
+	border: 1px solid #000;
+	outline: none;
+}
+
+ul.tabs li a:hover {
+	background: #ccc;
+}
+html ul.tabs li.active, html ul.tabs li.active a:hover  {
+	background: #fff;
+	border-bottom: 1px solid #fff;
+}
+
+.tab_container {
+	border: 1px solid #999;
+	border-top: none;
+	overflow: hidden;
+	clear: both;
+	float: right;
+	width: 720px;
+	height: 480px;
+	background: #fff;
+}
+.tab_content {
+	padding: 20px;
+	font-size: 1.2em;
+}
+</style>
+</head>
+<body>
+<article id="tab">
+		<ul class="tabs">
+	    <li><a href="#tab1"></a></li>
+	    <li><a href="#tab2"></a></li>
+	    <li><a href="#tab3"></a></li>
+	</ul>
+
+	<div class="tab_container">
+	    <div id="tab1" class="tab_content">
+	        aqui ba el contenido
+	    </div>
+	    <div id="tab2" class="tab_content">
+	       este es otro texto
+		</div>
+		<div id="tab3" class="tab_content">
+	       <iframe width="720" height="480" src="http://www.youtube.com/embed/2vRXMZfAbr4?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+</article>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+	$(".tab_content").hide();
+	$("ul.tabs li:first").addClass("active").show();
+	$(".tab_content:first").show();
+
+	$("ul.tabs li").click(function()
+       {
+		$("ul.tabs li").removeClass("active");
+		$(this).addClass("active");
+		$(".tab_content").hide();
+
+		var activeTab = $(this).find("a").attr("href");
+		$(activeTab).fadeIn();
+		return false;
+	});
+});
+</script>
+</body>
+</html>
